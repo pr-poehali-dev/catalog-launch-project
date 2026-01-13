@@ -141,10 +141,9 @@ const Index = () => {
             </div>
             <nav className="hidden md:flex items-center gap-6">
               <a href="#catalog" className="text-sm font-medium hover:text-primary transition-colors">Каталог</a>
-              <a href="#stores" className="text-sm font-medium hover:text-primary transition-colors">Магазины</a>
-              <a href="#cards" className="text-sm font-medium hover:text-primary transition-colors">Карты</a>
-              <a href="#loans" className="text-sm font-medium hover:text-primary transition-colors">Кредиты</a>
-              <Button className="gradient-purple-pink text-white">Войти</Button>
+              <button onClick={() => navigate('/compare')} className="text-sm font-medium hover:text-primary transition-colors">Сравнение</button>
+              <button onClick={() => navigate('/reviews')} className="text-sm font-medium hover:text-primary transition-colors">Отзывы</button>
+              <Button className="gradient-purple-pink text-white" onClick={() => navigate('/application')}>Подать заявку</Button>
             </nav>
             <Button variant="ghost" size="icon" className="md:hidden">
               <Icon name="Menu" size={24} />
@@ -348,6 +347,60 @@ const Index = () => {
               <p className="text-muted-foreground">Попробуйте изменить параметры фильтров</p>
             </div>
           )}
+        </div>
+      </section>
+
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto text-center mb-12">
+            <h3 className="text-3xl font-bold mb-4">Что говорят наши клиенты</h3>
+            <p className="text-muted-foreground">Более 500 отзывов от реальных пользователей</p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <Card>
+              <CardContent className="pt-6">
+                <div className="flex gap-1 mb-3">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Icon key={i} name="Star" size={16} className="fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-sm mb-4">"Отличный сервис! Быстро одобрили кредит, условия прозрачные."</p>
+                <div className="text-sm font-semibold">Алексей М.</div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="pt-6">
+                <div className="flex gap-1 mb-3">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Icon key={i} name="Star" size={16} className="fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-sm mb-4">"Удобное сравнение продуктов. Легко нашла карту с лучшим кэшбэком."</p>
+                <div className="text-sm font-semibold">Мария К.</div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="pt-6">
+                <div className="flex gap-1 mb-3">
+                  {[1, 2, 3, 4, 5].map((i) => (
+                    <Icon key={i} name="Star" size={16} className="fill-yellow-400 text-yellow-400" />
+                  ))}
+                </div>
+                <p className="text-sm mb-4">"Калькулятор помог рассчитать платежи. Всё прозрачно и понятно."</p>
+                <div className="text-sm font-semibold">Дмитрий С.</div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Button variant="outline" size="lg" onClick={() => navigate('/reviews')}>
+              <Icon name="MessageSquare" className="mr-2" size={18} />
+              Все отзывы
+            </Button>
+          </div>
         </div>
       </section>
 

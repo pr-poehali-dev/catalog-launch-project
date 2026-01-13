@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import Compare from "./pages/Compare";
 import Application from "./pages/Application";
 import ProductDetail from "./pages/ProductDetail";
+import Reviews from "./pages/Reviews";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/compare" element={<Compare />} />
           <Route path="/application" element={<Application />} />
           <Route path="/product/:id" element={<ProductDetail />} />
+          <Route path="/reviews" element={<Reviews />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

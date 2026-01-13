@@ -358,6 +358,15 @@ const ProductDetail = () => {
                       Сравнить с другими
                     </Button>
 
+                    <Button 
+                      variant="outline" 
+                      className="w-full"
+                      onClick={() => navigate('/reviews')}
+                    >
+                      <Icon name="MessageSquare" className="mr-2" size={18} />
+                      Отзывы клиентов
+                    </Button>
+
                     <div className="pt-4 space-y-3 border-t">
                       <div className="flex items-center gap-2 text-sm">
                         <Icon name="Clock" size={16} className="text-primary" />
