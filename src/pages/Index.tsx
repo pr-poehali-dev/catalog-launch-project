@@ -320,10 +320,22 @@ const Index = () => {
                     ))}
                   </div>
 
-                  <Button className="w-full gradient-purple-pink text-white" onClick={() => navigate('/application')}>
-                    Оформить заявку
-                    <Icon name="ArrowRight" className="ml-2" size={16} />
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button 
+                      variant="outline" 
+                      className="flex-1"
+                      onClick={() => navigate(`/product/${product.id}`)}
+                    >
+                      Подробнее
+                    </Button>
+                    <Button 
+                      className="flex-1 gradient-purple-pink text-white" 
+                      onClick={() => navigate('/application')}
+                    >
+                      Оформить
+                      <Icon name="ArrowRight" className="ml-2" size={16} />
+                    </Button>
+                  </div>
                 </CardContent>
               </Card>
             ))}
