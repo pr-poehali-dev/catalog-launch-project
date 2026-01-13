@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Slider } from '@/components/ui/slider';
 import Icon from '@/components/ui/icon';
+import { useNavigate } from 'react-router-dom';
 
 interface FinancialProduct {
   id: number;
@@ -97,6 +98,7 @@ const products: FinancialProduct[] = [
 ];
 
 const Index = () => {
+  const navigate = useNavigate();
   const [filterType, setFilterType] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [maxRate, setMaxRate] = useState([50]);
@@ -163,13 +165,13 @@ const Index = () => {
               Выбирайте выгодные условия за минуту.
             </p>
             <div className="flex gap-3 justify-center flex-wrap">
-              <Button size="lg" className="gradient-purple-pink text-white">
+              <Button size="lg" className="gradient-purple-pink text-white" onClick={() => navigate('/application')}>
                 <Icon name="Search" className="mr-2" size={18} />
                 Найти продукт
               </Button>
-              <Button size="lg" variant="outline">
+              <Button size="lg" variant="outline" onClick={() => navigate('/compare')}>
                 <Icon name="TrendingUp" className="mr-2" size={18} />
-                Популярное
+                Сравнить продукты
               </Button>
             </div>
           </div>
@@ -318,8 +320,8 @@ const Index = () => {
                     ))}
                   </div>
 
-                  <Button className="w-full gradient-purple-pink text-white">
-                    Подробнее
+                  <Button className="w-full gradient-purple-pink text-white" onClick={() => navigate('/application')}>
+                    Оформить заявку
                     <Icon name="ArrowRight" className="ml-2" size={16} />
                   </Button>
                 </CardContent>
